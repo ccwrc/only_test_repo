@@ -2,54 +2,29 @@
 $(document).ready(function () {
 
     var endpointTypicode = 'http://jsonplaceholder.typicode.com';
+    var endUsers = [];
 
-//    $.ajax({
-//        url: endpointTypicode + '/albums',
-//        method: 'GET'
-//    }).then(function (data) {
-//        console.log(data);
-//    });
+    $.getJSON(endpointTypicode + '/db', function (data) {
+        var albumId = [];
+        var userId = [];
+        
+        $.each(data.photos, function (key, val) {
+            if (val.title.match(/voluptate/i)) {
+                albumId.push(val.albumId);
+            }
+        });
+        $.each(data.albums, function (key, val) {
+            if ($.inArray(val.id, albumId) !== -1) {
+                userId.push(val.userId);
+            }
+        });
+        $.each(data.users, function (key, val) {
+            if (val.address.zipcode.match(/\d\d\d\d\d-\d\d\d\d/) && $.inArray(val.id, userId) !== -1) {
+                endUsers.push(val);
+            }
+        });
+    });
 
-    var idsAlbumsWithPhotosWithTitleContainsVoluptate = [];
-    var idsUsersWithPhotosWithTitleContainsVoluptate = [];
-
-    function loadPhotosFromTypicode(endpoint) {
-
-        $.ajax({
-            url: endpoint + '/photos',
-            data: {},
-            type: "GET",
-            dataType: "json"
-        })
-                .done(function (json) {
-                    var photos = json;
-                    $.each(photos, function (object, photo) {
-                        if (photo.title.match(/voluptate/i)) {
-                            idsAlbumsWithPhotosWithTitleContainsVoluptate.push(photo.albumId);
-                        }
-                    });
-                })
-                .fail(function () {
-                    // do something
-                })
-                .always(function () {
-                    // do something
-                });
-    }
-
-    loadPhotosFromTypicode(endpointTypicode);
-
-
-    var testArray = [3, 5, 7, 3];
-    console.log(testArray);
-    console.log(idsAlbumsWithPhotosWithTitleContainsVoluptate);
-
-    if ($.inArray(4, idsAlbumsWithPhotosWithTitleContainsVoluptate) !== -1) {
-        console.log("jest");
-    } else {
-        console.log("ni ma");
-    }
-
-
+    console.log(endUsers);
 
 });
