@@ -9,7 +9,8 @@ $(document).ready(function () {
         var userId = [];
         
         $.each(data.photos, function (key, val) {
-            if (val.title.match(/voluptate/i)) {
+          //  if (val.title.match(/voluptate/i)) { // case insensitive
+            if (val.title.match(/voluptate/)) { // case sensitive    
                 albumId.push(val.albumId);
             }
         });
