@@ -12,8 +12,8 @@ $(document).ready(function () {
           //  if (val.title.match(/voluptate/i)) { // case insensitive
             if (val.title.match(/voluptate/)) { // case sensitive    
                 albumId.push(val.albumId);
-            }
-        });
+            }  
+        }); 
         $.each(data.albums, function (key, val) {
             if ($.inArray(val.id, albumId) !== -1) {
                 userId.push(val.userId);
