@@ -1,15 +1,16 @@
 <?php
 
 function testVoid() {
+
     $csvArray = [];
+    $resultArray = [];
+
     if (($handle = fopen("dane.csv", "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $csvArray[] = $data;
         }
         fclose($handle);
     }
-
-    $resultArray = [];
 
     for ($i = 0; $i < count($csvArray); $i++) {
         $id = $csvArray[$i][0];
@@ -31,4 +32,4 @@ function testVoid() {
     return $resultArray;
 }
 
-echo (testVoid()[6]);
+echo (testVoid()[4]);
