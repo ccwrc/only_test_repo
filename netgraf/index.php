@@ -1,6 +1,6 @@
 <?php
 
-function testVoid() {
+function getArrayWithPaths() {
 
     $csvArray = [];
     $resultArray = [];
@@ -32,4 +32,4 @@ function testVoid() {
     return $resultArray;
 }
 
-echo (testVoid()[4]);
+echo (getArrayWithPaths()[6]);
