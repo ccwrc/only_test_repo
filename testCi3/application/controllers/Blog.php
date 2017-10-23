@@ -1,6 +1,11 @@
 <?php
 
 class Blog extends CI_Controller {
+    
+    public function __construct() {
+        parent::__construct(); //parent required !
+        // and your own code
+    }
 
     public function index() {
         //index - load by default //http://localhost/only_test_repo/testCi3/index.php/blog
@@ -26,7 +31,7 @@ class Blog extends CI_Controller {
         }
     }
 
-    private function _prv() {
+    private function _prv() { // _(underscore) + private - never show on basic routing
         echo "private function";
     }
 
