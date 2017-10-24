@@ -10,6 +10,8 @@ class Blog extends CI_Controller {
     public function index() {
         //index - load by default //http://localhost/only_test_repo/testCi3/index.php/blog
         // or http://localhost/only_test_repo/testCi3/index.php/blog/index
+        // var_dump(get_config()); exit;
+        // var_dump(get_instance()); exit;
         echo "Hello Blog controller! (function index)";
     }
 
