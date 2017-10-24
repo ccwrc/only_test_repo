@@ -14,7 +14,14 @@ class Blog extends CI_Controller {
         // var_dump(get_instance()); exit;
         // var_dump(SELF); exit;
         // echo "Hello Blog controller! (function index)";
-        $data["page_title"] = "new title from data";
+        // $data["page_title"] = "new title from data";
+        $data = [
+            "page_title" => "new page title from data",
+            "message" => "message from data"
+        ];
+        $data["todo_list"] = [
+            "todo1", "todo2", "todo3", "todo4"
+            ];
         $this->load->view("blog/blog_view", $data);
         $this->load->view("test_menu_view");
     }
