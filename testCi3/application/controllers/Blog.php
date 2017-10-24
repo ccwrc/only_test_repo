@@ -12,6 +12,7 @@ class Blog extends CI_Controller {
         // or http://localhost/only_test_repo/testCi3/index.php/blog/index
         // var_dump(get_config()); exit;
         // var_dump(get_instance()); exit;
+        // var_dump(SELF); exit;
         echo "Hello Blog controller! (function index)";
     }
 
