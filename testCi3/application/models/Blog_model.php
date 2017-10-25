@@ -9,5 +9,10 @@ class Blog_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
+    
+    function get_all_blog() {
+        $query = $this->db->get("blog");
+        return $query->result();
+    }
 
 }

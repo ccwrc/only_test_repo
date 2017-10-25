@@ -39,6 +39,8 @@ class Blog extends CI_Controller {
             $this->comments();
         } elseif ($method === "private") {
             $this->_prv();
+        } elseif ($method === "model_test") {
+            $this->model_test();
         } else {
             show_404();
         }
@@ -46,6 +48,12 @@ class Blog extends CI_Controller {
 
     private function _prv() { // _(underscore) + private - never show on basic routing
         echo "private function";
+    }
+    
+    public function model_test() {
+        $this->load->model("Blog_model");
+        $data["query"] = $this->Blog_model->get_all_blog();
+        var_dump($data); exit;
     }
 
 }
