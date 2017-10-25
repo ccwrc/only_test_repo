@@ -5,6 +5,9 @@
     <body>
         <h2>model test view</h2>
 
+        <?php
+        var_dump($query);
+        ?>
 
     </body>
 </html>
