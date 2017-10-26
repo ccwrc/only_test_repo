@@ -6,6 +6,8 @@ class Blog extends CI_Controller {
         parent::__construct(); //parent required !
         // and your own code
         $this->load->helper("url");
+        // load many helpers ->helper(["url", "other", "and_other"]);
+        // or add helpers to autoload application/config/autoload.php
     }
 
     public function index() {
