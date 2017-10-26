@@ -51,8 +51,8 @@ class Blog extends CI_Controller {
     }
     
     public function model_test() {
-        $this->load->model("Blog_model");
-        $data["query"] = $this->Blog_model->get_all_blog();
+        // $this->load->model("Blog_model");  //autoload on
+        $data["query"] = $this->Blog_model->get_two_blog();
         // var_dump($data); exit;
         $this->load->view("blog/model_test_view", $data);
     }

@@ -14,5 +14,9 @@ class Blog_model extends CI_Model {
         $query = $this->db->get("blog");
         return $query->result();
     }
-
+    
+    function get_two_blog() {
+        $query = $this->db->get("blog", 2);
+        return $query->result();
+    }
 }
