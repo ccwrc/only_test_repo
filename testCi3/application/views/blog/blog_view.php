@@ -6,8 +6,11 @@
     <h2>Welcome to test blog</h2>
     
     <?php echo anchor("blog/comments", "test link title to blog-comments");?>
-
     <br/>
+    
+    <?php test_my_url_helper();?>
+    <br/>
+    
     page_title: <br/>
     <?= $page_title ?> <br/>
     message: <br/>
