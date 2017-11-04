@@ -18,6 +18,17 @@ class Item_history extends DataMapper {
         $multi_obj_array = $obj->all_to_array();
         return $multi_obj_array;
     }
-
+    
+    //6.Z tabeli items_histories wyś. item_id wierszy z retail_price > 1000 oraz mniejszych < 2500
+    public function exercise_6() {
+        $obj = new Item_history();
+        $obj->select("item_id");
+        $obj->where("retail_price >", 1000);
+        $obj->where("retail_price <", 2500);
+        $obj->get();
+        $multi_obj_array = $obj->all_to_array();
+        return $multi_obj_array;
+    }
+    
 }
 
