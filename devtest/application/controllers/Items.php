@@ -9,8 +9,10 @@ class Items extends CI_Controller {
 
     public function index() {
         //echo "Items (only) controller test echo";
+        
         // var_dump($this->Item->exercise_1());
-        var_dump($this->Item->exercise_2());
+        // var_dump($this->Item->exercise_2());
+        var_dump($this->Item->exercise_3());
     }
     
 }

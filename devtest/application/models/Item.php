@@ -28,5 +28,16 @@ class Item extends DataMapper {
     }
     
     // 2. wyświetl z tabeli items dane produktu o name_raw = 'Lorax'
+    public function exercise_2() {
+        $obj = new Item();
+        $obj->where("name_raw", "Lorax");
+        $obj->get();
+        $single_obj_array = $obj->to_array();
+        $counter = $obj->result_count();
+        $multi_obj_array = $obj->all_to_array();
+        return $single_obj_array;   
+        // return $counter;
+        // return $multi_obj_array;
+    }
 
 }
