@@ -39,5 +39,16 @@ class Item extends DataMapper {
         // return $counter;
         // return $multi_obj_array;
     }
+    
+    // 3. wyświetl listę produktów o name_raw rozpoczynającej się od 'MC92N0'
+    public function exercise_3() {
+        $obj = new Item();
+        $obj->like("name_raw", "MC92N0", "after");
+        $obj->get();
+        $multi_obj_array = $obj->all_to_array();
+        return $multi_obj_array;
+    }
+    
+    
 
 }
