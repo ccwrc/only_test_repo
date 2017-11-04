@@ -49,6 +49,14 @@ class Item extends DataMapper {
         return $multi_obj_array;
     }
     
+    // 4. wyświetl ilość produktów, których name_raw  zaczyna się od 'Lorax'
+    public function exercise_4() {
+        $obj = new Item();
+        $obj->like("name_raw", "Lorax", "after");
+        $obj->get();
+        $counter = $obj->result_count();
+        return $counter;
+    }
     
 
 }
