@@ -30,5 +30,15 @@ class Item_history extends DataMapper {
         return $multi_obj_array;
     }
     
+    // 7. Z tabeli items_histories wyświetl pierwsze 10 elementów posortowanych po polu date rosnąco
+    public function exercise_7() {
+        $obj = new Item_history();
+        $obj->limit(10);
+        $obj->order_by("date", "asc");
+        $obj->get();
+        $multi_obj_array = $obj->all_to_array();
+        return $multi_obj_array;        
+    }
+    
 }
 
