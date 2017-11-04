@@ -1,11 +1,11 @@
 <?php
 
-class Items_histories extends DataMapper {
-    
-    public function __construct($id = NULL) {
-        parent::__construct($id);
-    }
-    
-    //
-}
+class Items_histories extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+    }
+
+    //
+    
+}
