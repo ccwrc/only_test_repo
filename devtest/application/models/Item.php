@@ -1,6 +1,8 @@
 <?php
 
 class Item extends DataMapper {
+    
+    var $has_one = ["item_history"];
 
     public function __construct($id = NULL) {
         parent::__construct($id);
@@ -58,5 +60,50 @@ class Item extends DataMapper {
         return $counter;
     }
     
+    // 9. wyświetl name_raw z tabeli items produktów, które w historii posiadają date = 2016-10-10
+    public function exercise_9() {
+        $obj = new Item();
+        $obj->select("name_raw, id");
+        $obj->where_related("item_history", "date", "2016-10-10");
+        $obj->get();
+        $multi_obj_array = $obj->all_to_array();
+        return $multi_obj_array;        
+    }
+    
+    // 10. zmień nazwę produktu o id = 6 na name_raw = 'nowa nazwa'
+    public function exercise_10() {
+        $obj = new Item();
+        $obj->get_by_id(6);
+        $obj->name_raw = "nowa nazwa";
+        if($obj->save()) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+    
+    // 11. usuń produkt o nazwie "Nabe vorn" oraz usuń jego całą historię.
+    public function exercise_11() {
+        $obj = new Item();
+        $obj->get_by_name("Nabe vorn");
+        
+        $obj_related = new Item_history();
+        $obj_related->where_related($obj)->get();
+        
+        $infoString = "";
+        
+        if($obj->delete()) {
+            $infoString .= "item wykasowany ";
+        } else {
+            $infoString .= "item nie istnieje ";
+        }
+        
+        if($obj_related->delete()) {
+            $infoString .= "item_history wykasowany ";
+        } else {
+            $infoString .= "item_history nie istnieje ";
+        }        
+        
+        return $infoString;
+    }    
 
 }

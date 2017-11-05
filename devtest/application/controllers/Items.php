@@ -17,7 +17,15 @@ class Items extends CI_Controller {
         // var_dump($this->Item->exercise_4());
         // var_dump($this->Item_history->exercise_5());
         // var_dump($this->Item_history->exercise_6());
-        var_dump($this->Item_history->exercise_7());
+        // var_dump($this->Item_history->exercise_7());
+        
+        // exercise_8
+        // w modelu Item dodane: var $has_one = ["item_history"];
+        // w modelu Item_history dodane: var $has_one = ["item"];
+        
+        // var_dump($this->Item->exercise_9());
+        // var_dump($this->Item->exercise_10());
+        var_dump($this->Item->exercise_11());
     }
     
 }
