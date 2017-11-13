@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>item default view</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <h2>plain text H2</h2>
+
+        <button type="button" class="btn btn-danger" 
+                data-toggle="modal" data-target="#myModal">modal - ten sam widok</button><br/><br/>
+
+        <button type="button" class="btn btn-info" data-remote="http://127.0.0.1:8000/modal"
+                data-toggle="modal" data-target="#myModal2">modal - render innego widoku</button><br/><br/>        
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Tytuł okienka pop-up</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Zawartość okienka pop-up, ten sam widok</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            {{ render(controller('ItemBundle:Default:modal')) }}
+        </div>
+
+    </body>
+</html>

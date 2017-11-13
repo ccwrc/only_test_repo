@@ -7,6 +7,19 @@ class Item extends DataMapper {
     public function __construct($id = NULL) {
         parent::__construct($id);
     }
+    
+    public function exercise_test() {
+        $obj = new Item();
+        
+        $obj->get();
+        $arr = $obj->all_to_single_array("name");
+
+        return $arr;
+    }
+    
+    
+    
+    
 
     // 1. wyświetl z tabeli items dane produktu o id = 4
     public function exercise_1() {

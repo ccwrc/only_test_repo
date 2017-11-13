@@ -25,7 +25,9 @@ class Items extends CI_Controller {
         
         // var_dump($this->Item->exercise_9());
         // var_dump($this->Item->exercise_10());
-        var_dump($this->Item->exercise_11());
+        // var_dump($this->Item->exercise_11());
+        
+        var_dump($this->Item->exercise_test());
     }
     
 }
