@@ -21,5 +21,15 @@ class DefaultController extends Controller
     public function modalAction()
     {
         return $this->render('ItemBundle:Default:modal.html.twig');
-    }    
+    }   
+    
+    /**
+     * @Route("/adminLte")
+     */
+    public function adminLteAction()
+    {
+        return $this->render('ItemBundle:Default:admin_lte.html.twig');
+    }       
+    
+  
 }
