@@ -1,10 +1,10 @@
 <?php
 
 class Product {
-    public $id;
-    public $name;
-    public $price;
-    public $quantity;
+    private $id;
+    private $name;
+    private $price;
+    private $quantity;
     private $amount = null;
 
     public function __construct($fileName) {
@@ -29,8 +29,14 @@ class Product {
     }
 
 	public function __get($name) {
-        // TODO pole: wartosc pola... wtf?
-        return (isset($this->$name) ? $this->$name : null);
+        if (isset($this->$name)) {
+            foreach (get_object_vars($this) as $key => $value) {
+                if (get_object_vars($this)[$name] === $value) {
+                    return $key . ": " . $value;
+                }
+            }
+        }
+        return null;
     }
 
 }

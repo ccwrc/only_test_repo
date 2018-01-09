@@ -8,17 +8,15 @@ function classLoader($className) {
 
 spl_autoload_register("classLoader");
 
+
+
 echo "działa moleo <br/><br/>";
 
-//$handle = fopen("product.json", "r");
-//
-//$jsonObject = json_decode(fgets($handle));
-//
-//var_dump($jsonObject->quantity);
+$prodVar = new ProductVariation("product.json", "szarny");
 
-$prod = new Product("product.json");
+var_dump($prodVar);
 
-echo $prod->name;
+echo $prodVar->getAmount();
 
 
 
