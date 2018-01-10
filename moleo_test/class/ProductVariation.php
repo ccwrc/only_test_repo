@@ -12,6 +12,9 @@ class ProductVariation extends Product {
         }
         $this->color = $color;
     }
-      
-
+    
+    public function getColor() {
+        return $this->color;
+    }
+ 
 }

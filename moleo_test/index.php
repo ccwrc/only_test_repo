@@ -8,25 +8,13 @@ function classLoader($className) {
 
 spl_autoload_register("classLoader");
 
-
-
-echo "działa moleo <br/><br/>";
+echo "moleo <hr/>";
 
 $prodVar = new ProductVariation("product.json", "szarny");
-//var_dump($prodVar->getNet());
-
-
-
 $prod = new Product("product.json");
-//var_dump($prod->getNet());
-
-
-//$prod2 = new Product("product.json");
-//$arrProd = new Products();
-//$arrProd->addProduct($prod);
-//$arrProd->addProductVariation($prodVar)->addProduct($prod2);
-//var_dump($arrProd->collectionContainItems);
 
 //var_dump(Basic::generateRandomItems(5));
 
-Basic::showItems("ID2018011017463293276");
+//Basic::showItems("ID2018011017401730285");
+
+var_dump(Basic::deleteProducts("ID201801101746292977"));

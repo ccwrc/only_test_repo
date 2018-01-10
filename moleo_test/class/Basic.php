@@ -47,14 +47,26 @@ class Basic {
 
         echo "<pre>";
         foreach ($products->collectionContainItems as $object) {
-            print_r($object);
+            //print_r($object);
             // or 'magic'...
-//            echo $object->id;
-//            echo $object->name;
-//            echo $object->price;
-//            echo $object->quantity;
+            echo $object->id;
+            echo $object->name;
+            echo $object->price;
+            echo $object->quantity;
+            if (get_class($object) === "ProductVariation") {
+                echo "color: " . $object->getColor();
+            }
         }
         echo "</pre>";
+    }
+    
+    public static function deleteProducts($onlyFileId) {
+        if (!file_exists("products/$onlyFileId.json")) {
+            return true;
+        }
+        if (unlink("products/$onlyFileId.json")) {
+            return false;
+        }
     }
 
     // (Start) helpers
