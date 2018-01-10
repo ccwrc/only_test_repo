@@ -1,6 +1,6 @@
 <?php
 
-class Product {
+class Product implements Item {
     private $id;
     private $name;
     private $price;
@@ -38,5 +38,15 @@ class Product {
         }
         return null;
     }
+    
+    // (Start) Item interface methods
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getNet() {
+        return $this->price * 0.77;
+    }
+    // (End) Item interface methods
 
 }

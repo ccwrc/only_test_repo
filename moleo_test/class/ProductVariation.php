@@ -8,7 +8,7 @@ class ProductVariation extends Product {
         parent::__construct($fileName);
         
         if (!is_string($color) || $color == null) {
-            throw new UndefinedVariantColor("plain exception message for und. var. color...");
+            throw new UndefinedVariantColor("Exception message - undefined color variant.");
         }
         $this->color = $color;
     }
