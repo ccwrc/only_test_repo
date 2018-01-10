@@ -6,10 +6,10 @@ class Product implements Item {
     private $price;
     private $quantity;
     private $amount = null;
-
+      
     public function __construct($fileName) {
         if (!file_exists($fileName)) {
-            throw new ProductFileNotFound("plain exception message for product file...");
+            throw new ProductFileNotFound("plain exception message for product file not found...");
         }
 
         $handle = fopen($fileName, "r");

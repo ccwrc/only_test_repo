@@ -27,4 +27,6 @@ $prod = new Product("product.json");
 //$arrProd->addProductVariation($prodVar)->addProduct($prod2);
 //var_dump($arrProd->collectionContainItems);
 
-Basic::generateRandomItems(6);
+//var_dump(Basic::generateRandomItems(5));
+
+Basic::showItems("ID2018011017463293276");
