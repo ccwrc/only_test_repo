@@ -13,7 +13,7 @@ class Product implements Item {
             throw new ProductFileNotFound("plain exception message for product file not found...");
         }
 
-        $handle = fopen($fileName, "r");
+        $handle = fopen($fileName, "r"); //ccwrc note: __DIR__ + path
         $jsonObject = json_decode(fgets($handle));
 
         $this->id = $jsonObject->id;
@@ -33,7 +33,7 @@ class Product implements Item {
         if (isset($this->$name)) {
             foreach (get_object_vars($this) as $key => $value) {
                 if (get_object_vars($this)[$name] === $value) {
-                    return $key . ": " . $value;
+                    return $key . ": " . $value . " ";
                 }
             }
         }

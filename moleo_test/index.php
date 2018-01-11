@@ -11,13 +11,34 @@ function classLoader($className) {
 spl_autoload_register("classLoader");
 
 
-echo "moleo <hr/>";
+//echo "moleo_test_client <hr/>";
 
-$prodVar = new ProductVariation("product.json", "szarny");
-$prod = new Product("product.json");
+/* create products (include ProductVariation) */
+// Basic::generateRandomItems(8);
 
-//var_dump(Basic::generateRandomItems(5));
+/* show products from a single file */
+Basic::showItems("ID2018011111324330614");
 
-//Basic::showItems("ID2018011017401730285");
+/* testing file removal */
+//var_dump(Basic::deleteProducts("ID2018011017401950124"));
+//if (!Basic::deleteProducts("ID2018011017402078455")) {
+//    echo "products del";
+//} else {
+//    echo "file not exists";
+//}
 
-var_dump(Basic::deleteProducts("ID201801101809481223"));
+
+/* console
+ * php -h
+ * php -f index.php // php index.php
+ * php -r "require 'index.php'; Basic::generateRandomItems(11);"
+ */
+
+
+
+/* product + ProductVariation instance creation test */
+//$product = new Product("product.json");
+//$productVariation = new ProductVariation("product.json", "żółtośliwkowoszary");
+//$productVariation = new ProductVariation("product.json", 3);
+//var_dump($product);
+//var_dump($productVariation);

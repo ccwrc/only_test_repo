@@ -56,6 +56,7 @@ class Basic {
             if (get_class($object) === "ProductVariation") {
                 echo "color: " . $object->getColor();
             }
+            echo "\n";
         }
         echo "</pre>";
     }
