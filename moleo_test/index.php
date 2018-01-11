@@ -1,12 +1,15 @@
 <?php
 
 function classLoader($className) {
-    if(file_exists("class/" . $className . ".php")) {
+    if (file_exists("class/" . $className . ".php")) {
         require_once "class/" . $className . ".php";
+    } else if (!file_exists("class/" . $className . ".php")) {
+        throw new Exception();
     }
 }
 
 spl_autoload_register("classLoader");
+
 
 echo "moleo <hr/>";
 
@@ -17,4 +20,4 @@ $prod = new Product("product.json");
 
 //Basic::showItems("ID2018011017401730285");
 
-var_dump(Basic::deleteProducts("ID201801101746292977"));
+var_dump(Basic::deleteProducts("ID201801101809481223"));
