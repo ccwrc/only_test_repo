@@ -1,5 +1,6 @@
 <?php
 
+// file/interface name should contain a suffix 'interface'...?
 interface Item {
     
     /* return product or variant id */

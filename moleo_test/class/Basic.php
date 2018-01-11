@@ -48,7 +48,7 @@ class Basic {
         echo "<pre>";
         foreach ($products->collectionContainItems as $object) {
             //print_r($object);
-            // or 'magic'...
+            /* or 'magic'... */
             echo $object->id;
             echo $object->name;
             echo $object->price;
